@@ -1,0 +1,32 @@
+[
+    {
+        "id": 1,
+        "username": "john_doe",
+        "password": "abc123",
+        "admin": true
+    },
+    {
+        "id": 2,
+        "username": "jane_smith",
+        "password": "pass456",
+        "admin": false
+    },
+    {
+        "id": 3,
+        "username": "mario_rossi",
+        "password": "qwerty789",
+        "admin": false
+    },
+    {
+        "id": 4,
+        "username": "anna_bianchi",
+        "password": "zxcvbn987",
+        "admin": false
+    },
+    {
+        "id": 5,
+        "username": "lucas_verdi",
+        "password": "pass321",
+        "admin": false
+    }
+]
