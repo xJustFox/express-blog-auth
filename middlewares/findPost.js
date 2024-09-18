@@ -4,7 +4,7 @@ module.exports = (req, res, next) => {
 
     if (!postFound) {
         const statusCode = 404;
-        res.status(statusCode).json({
+        return res.status(statusCode).json({
             statusCode,
             error: 'Post Not Found',
             stack: null

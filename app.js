@@ -15,24 +15,7 @@ const auth = require('./controllers/auth.js');
 app.use(express.static('public'));
 app.use(express.json());
 
-app.post('/login', (req, res) => {
-    const { username, password} = req.body;
-    const user = users.find(user => user.username === username && user.password === password);
-    if (!user) {
-        res.status(404).json({
-            error: 'Wrong credentials',
-        })
-    };
-
-    const token = auth.generateToken(user);
-
-    res.status(200).json({
-        userToken: token,
-    });
-
-})
-
-app.use(auth.authenticateUser);
+app.post('/login', auth.login);
 
 app.get('/home', (req, res) => res.sendFile( path.join(__dirname,'./index.html')));
 
