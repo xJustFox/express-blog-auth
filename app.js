@@ -32,6 +32,8 @@ app.post('/login', (req, res) => {
 
 })
 
+app.use(auth.authenticateUser);
+
 app.get('/home', (req, res) => res.sendFile( path.join(__dirname,'./index.html')));
 
 app.use('/posts', postsRouter);
