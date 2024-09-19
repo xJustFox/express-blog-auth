@@ -45,7 +45,7 @@ const authenticateUser = (req, res, next) => {
 };
 
 // Middleware that checks whether the user has the admin role
-const isAdmin = (req, res, next) => {
+const authenticateAdmin = (req, res, next) => {
     const { username, password } = req.user;
     const user = users.find(user => user.username === username && user.password === password);
     if (!user || !user.admin) {
@@ -61,6 +61,6 @@ module.exports = {
     login,
     generateToken,
     authenticateUser,
-    isAdmin
+    authenticateAdmin
 }
 
