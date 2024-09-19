@@ -12,6 +12,6 @@ router.get('/', posts.index);
 router.post('/store', auth.authenticateUser, uploader.single('img'), posts.store);
 router.get('/:slug', posts.show);
 router.get('/:slug/download', posts.downloadImage);
-router.delete('/:slug', auth.authenticateUser, auth.isAdmin, findPost, posts.destroy);
+router.delete('/:slug', auth.authenticateUser, auth.authenticateAdmin, findPost, posts.destroy);
 
 module.exports = router;
